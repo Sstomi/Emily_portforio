@@ -11,7 +11,7 @@ export default function Home() {
             <div className="flex-1 space-y-6">
               <h1 className="text-5xl font-bold">Creative Web Designer</h1>
               <p className="text-xl text-gray-600">
-                Hi, I'm Emily. I create beautiful and functional websites that
+                Hi, I&apos;m Emily. I create beautiful and functional websites that
                 help businesses grow.
               </p>
               <Button>View My Work</Button>
