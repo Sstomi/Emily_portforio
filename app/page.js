@@ -1,6 +1,24 @@
 import Image from "next/image";
 import Button from "@/components/Button";
 
+// トップページの設定
+export const metadata = {
+  title: 'ホーム', // ページのタイトル
+  description: 'ウェブサイトのトップページです', // ページの説明
+  openGraph: {
+    title: 'ホーム',
+    description: 'ウェブサイトのトップページです',
+    images: [
+      {
+        url: '/home-image.jpg',
+        width: 1200,
+        height: 630,
+      }
+    ],
+  },
+}
+
+
 export default function Home() {
   return (
     <>

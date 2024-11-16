@@ -1,6 +1,24 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+// トップページの設定
+export const metadata = {
+  title: 'Portfolio', // ページのタイトル
+  description: 'ポートフォリオを掲載しています。', // ページの説明
+  openGraph: {
+    title: 'ポートフォリオ',
+    description: '私の過去の作品',
+    images: [
+      {
+        url: 'public/portfolio-seo-images.png',
+        width: 1200,
+        height: 630,
+      }
+    ],
+  },
+}
+
+
 const projects = [
   {
     id: 1,
