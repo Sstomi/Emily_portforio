@@ -45,7 +45,7 @@ export const metadata = {
     title: "Emily's Portfolio",
     description: 'Creative Web Designer based in Tokyo',
     creator: '@emilytwitter', // あなたのTwitterハンドル
-    images: ['/images/seo/OpenGraph-image1200-630.png'], // OGP画像と同じものを使用
+    images: ['https://glittering-kitten-678a8c.netlify.app/images/seo/x-card.png'], // OGP画像と同じものを使用
   },
   
   // アイコン設定
