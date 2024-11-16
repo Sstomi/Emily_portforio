@@ -14,24 +14,24 @@ export const metadata = {
   description: 'Creative Web Designer based in Tokyo',
   
   // メタデータのベースURL設定
-  metadataBase: new URL('https://www.example.com'), // あなたのドメインに変更してください
+  metadataBase: new URL('https://glittering-kitten-678a8c.netlify.app/'), // あなたのドメインに変更してください
   
   // 基本的なメタタグ
   keywords: ['Web Design', 'Portfolio', 'Tokyo', 'Creative Design'],
-  authors: [{ name: 'Emily', url: 'https://www.example.com' }],
+  authors: [{ name: 'Emily', url: 'https://glittering-kitten-678a8c.netlify.app/' }],
   creator: 'Emily',
   
   // SNSカード設定（OGP）
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.example.com',
+    url: 'https://glittering-kitten-678a8c.netlify.app/',
     siteName: "Emily's Portfolio",
     title: "Emily's Portfolio",
     description: 'Creative Web Designer based in Tokyo',
     images: [
       {
-        url: '/images/seo/OpenGraph-image1200-630.png', //　/images/OpenGraph-image1200-630.png を配置
+        url: 'https://glittering-kitten-678a8c.netlify.app/images/seo/OpenGraph-image1200-630.png', //　/images/OpenGraph-image1200-630.png を配置
         width: 1200,
         height: 630,
         alt: "Emily's Portfolio",
@@ -45,7 +45,7 @@ export const metadata = {
     title: "Emily's Portfolio",
     description: 'Creative Web Designer based in Tokyo',
     creator: '@emilytwitter', // あなたのTwitterハンドル
-    images: ['/images/OpenGraph-image1200-630.png'], // OGP画像と同じものを使用
+    images: ['/images/seo/OpenGraph-image1200-630.png'], // OGP画像と同じものを使用
   },
   
   // アイコン設定
