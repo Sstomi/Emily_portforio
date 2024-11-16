@@ -31,7 +31,7 @@ export const metadata = {
     description: 'Creative Web Designer based in Tokyo',
     images: [
       {
-        url: '/images/OpenGraph-image1200-630.png', //　/images/OpenGraph-image1200-630.png を配置
+        url: '/images/seo/OpenGraph-image1200-630.png', //　/images/OpenGraph-image1200-630.png を配置
         width: 1200,
         height: 630,
         alt: "Emily's Portfolio",

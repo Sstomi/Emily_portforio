@@ -10,7 +10,7 @@ export const metadata = {
     description: 'ウェブサイトのトップページです',
     images: [
       {
-        url: '/home-image.jpg',
+        url: '/images/seo/OpenGraph-image1200-630.png',
         width: 1200,
         height: 630,
       }
