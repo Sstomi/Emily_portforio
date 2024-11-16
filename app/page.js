@@ -10,7 +10,7 @@ export const metadata = {
     description: 'ウェブサイトのトップページです',
     images: [
       {
-        url: '/images/seo/OpenGraph-image1200-630.png',
+        url: 'https://glittering-kitten-678a8c.netlify.app/images/seo/OpenGraph-image1200-630.png',
         width: 1200,
         height: 630,
       }

@@ -7,10 +7,10 @@ export const metadata = {
   description: 'ポートフォリオを掲載しています。', // ページの説明
   openGraph: {
     title: 'ポートフォリオ',
-    description: '私の過去の作品',
+    description: '私の過去の作品たち',
     images: [
       {
-        url: 'public/portfolio-seo-images.png',
+        url: 'https://glittering-kitten-678a8c.netlify.app/images/seo/portfolio-seo-images.png',
         width: 1200,
         height: 630,
       }
