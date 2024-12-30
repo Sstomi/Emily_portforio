@@ -56,6 +56,12 @@ export default function ContactPage() {
     return Object.keys(newErrors).length === 0;
   };
 
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -63,18 +69,28 @@ export default function ContactPage() {
       return;
     }
 
-    // ここでフォームデータの送信処理を実装
-    // 例: API エンドポイントへのPOSTリクエスト
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": "contact",
+          ...formData
+        })
+      });
 
-    setSubmitted(true);
-    setFormData({
-      name: "",
-      company: "",
-      position: "",
-      email: "",
-      topic: "",
-      message: "",
-    });
+      setSubmitted(true);
+      setFormData({
+        name: "",
+        company: "",
+        position: "",
+        email: "",
+        topic: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Form submission error:", error);
+    }
   };
 
   if (submitted) {
@@ -110,7 +126,19 @@ export default function ContactPage() {
     <div className="max-w-2xl mx-auto mt-12 p-6">
       <h1 className="text-2xl font-bold mb-8">お問い合わせ</h1>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form 
+        onSubmit={handleSubmit} 
+        className="space-y-6"
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <div hidden>
+          <input name="bot-field" />
+        </div>
+
         <div>
           <label
             htmlFor="name"
@@ -121,6 +149,7 @@ export default function ContactPage() {
           <input
             type="text"
             id="name"
+            name="name"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
@@ -140,6 +169,7 @@ export default function ContactPage() {
           <input
             type="text"
             id="company"
+            name="company"
             value={formData.company}
             onChange={(e) =>
               setFormData({ ...formData, company: e.target.value })
@@ -161,6 +191,7 @@ export default function ContactPage() {
           <input
             type="text"
             id="position"
+            name="position"
             value={formData.position}
             onChange={(e) =>
               setFormData({ ...formData, position: e.target.value })
@@ -182,6 +213,7 @@ export default function ContactPage() {
           <input
             type="email"
             id="email"
+            name="email"
             value={formData.email}
             onChange={(e) =>
               setFormData({ ...formData, email: e.target.value })
@@ -202,6 +234,7 @@ export default function ContactPage() {
           </label>
           <select
             id="topic"
+            name="topic"
             value={formData.topic}
             onChange={(e) =>
               setFormData({ ...formData, topic: e.target.value })
@@ -229,6 +262,7 @@ export default function ContactPage() {
           </label>
           <textarea
             id="message"
+            name="message"
             rows={4}
             value={formData.message}
             onChange={(e) =>
